@@ -1,5 +1,5 @@
 #212A31 <-- Primary Color
 #2E3944 <-- Secondary Color
-#124E66 <-- PopUp Color
+#1A6E8F <-- PopUp Color
 #748DA9 <-- Details Color
 #D3D9D4 <-- Text Color
