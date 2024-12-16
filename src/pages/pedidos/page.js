@@ -1,7 +1,13 @@
+import Navbar from "../../components/Navbar";
+import { useState, useEffect } from "react";
 
-
-export default function Pedidos() {
+const Pedidos = () => {
     return (
-        
+        <>
+            <Navbar></Navbar>
+            <div>Pedidos</div>
+        </>
     );
 }
+
+export default Pedidos;

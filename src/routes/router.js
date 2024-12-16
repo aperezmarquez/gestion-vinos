@@ -7,8 +7,8 @@ import Pedidos from "../pages/pedidos/page";
 import Productos from "../pages/productos/page";
 
 export const router = createBrowserRouter([
-    { path: "/", element: <Home /> },
-    { path: "/login", element: <Login /> },
+    { path: "/home", element: <Home /> },
+    { path: "/", element: <Login /> },
     { path: "/register", element: <Register /> },
     { path: "/empleados", element: <Empleados /> },
     { path: "/pedidos", element: <Pedidos /> },
