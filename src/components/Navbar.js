@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 
 function Navbar() {
-    const [currentRole, setCurrentRole] = useState('user');
+    const [currentRole, setCurrentRole] = useState('admin');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,9 +23,16 @@ function Navbar() {
                             <Link to="/pedidos" className="link nav-pedidos">Pedidos</Link>
                         </div>
                     )}
-                    <div className="nav-item-productos">
-                        <Link to="/productos" className="link nav-productos">Productos</Link>
-                    </div>
+                    {(currentRole === 'user' || currentRole === 'admin') && (
+                        <div className="nav-item-productos">
+                            <Link to="/productos" className="link nav-productos">Productos</Link>
+                        </div>
+                    )}
+                    {(currentRole === 'user' || currentRole === 'admin') && (
+                        <div className="nav-item-clientes">
+                            <Link to="/clientes" className="link nav-clientes">Clientes</Link>
+                        </div>
+                    )}
                     {currentRole === 'admin' && (
                         <div className="nav-item-empleados">
                             <Link to="/empleados" className="link nav-empleados">Empleados</Link>
