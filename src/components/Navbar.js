@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 
 function Navbar() {
-    const [currentRole, setCurrentRole] = useState('admin');
+    const [currentRole, setCurrentRole] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
         const role = localStorage.getItem('role');
-        //setCurrentRole(role);
+        setCurrentRole(role);
     }, []);
 
     return (

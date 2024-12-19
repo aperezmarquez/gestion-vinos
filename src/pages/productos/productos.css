@@ -1,0 +1,6 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Rejilla adaptable */
+  gap: 100px; /* Espaciado entre los elementos */
+  padding: 20px;
+}
