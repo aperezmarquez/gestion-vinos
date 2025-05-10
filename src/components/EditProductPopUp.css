@@ -1,7 +1,7 @@
 .edit-product-popup {
     width: 30vw;
-    height: 40vh;
-    padding: 2vh 3vw;
+    height: 43vh;
+    padding: 1vh 3vw;
     border-radius: 0.6vw;
     border: None;
 }
@@ -50,5 +50,15 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+    }
+
+    button {
+        width: 30vw;
+        height: 4vh;
+        margin-top: 2vh;
+        border-radius: 0.6vw;
+        border: None;
+        background: #4c657e;
+        color: #fff;
     }
 }
