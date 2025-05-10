@@ -1,0 +1,46 @@
+.add-product-dialog {
+    width: 30vw;
+    height: 55vh;
+    padding: 3vh 3vw;
+    border-radius: 0.6vw;
+    border: None;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.add-product-close {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+
+    p {
+        cursor: pointer;
+    }
+}
+
+.add-product-form {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh 0 2vh 0;
+    gap: 2vh;
+    
+    input {
+        width: 29vw;
+        height: 3vh;
+        padding: 0 0.5vw;
+    }
+     
+    button {
+        width: 30vw;
+        height: 3.5vh;
+        border-radius: 0.6vw;
+        border: None;
+        background: #4c657e;
+        color: #fff;
+    }
+}
