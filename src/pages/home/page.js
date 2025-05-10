@@ -91,32 +91,7 @@ const Home = () => {
         localStorage.setItem("email", result.email)
 
         navigate("/pedidos")
-    };
-
-    const handleSubmitRegister = async (e) => {
-        e.preventDefault();
-        const response = await fetch("http://localhost:3500/api/usuarios/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                email: registerData.email,
-                contraseña: registerData.contraseña,
-                role: registerData.role
-            }),
-        })
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-
-        const result = await response.json()
-        localStorage.setItem("token", result.token)
-        localStorage.setItem("role", result.role)
-        localStorage.setItem("email", result.email)
-
-        navigate("/pedidos")
-    };
+    }; 
 
     return (
         <>
@@ -152,38 +127,7 @@ const Home = () => {
                         <button onClick={toggleRegister}>Register</button>
                     </div>
                 </div>
-            )}
-            {isRegisterOpen && (
-                <div className="popup-overlay">
-                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-                        <h2>Register</h2>
-                        <form onSubmit={handleSubmitRegister}>
-                            <div>
-                                <label htmlFor="email">Email:</label>
-                                <input 
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={registerData.email}
-                                    onChange={handleChangeRegister}
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="contraseña">Contraseña:</label>
-                                <input 
-                                    type="password"
-                                    id="contraseña"
-                                    name="contraseña"
-                                    value={registerData.contraseña}
-                                    onChange={handleChangeRegister}
-                                />
-                            </div>
-                            <button type="submit">Enviar</button>
-                        </form> 
-                        <button onClick={toggleRegister}>LogIn</button>
-                    </div>
-                </div>
-            )}
+            )} 
         </>
     );
 };

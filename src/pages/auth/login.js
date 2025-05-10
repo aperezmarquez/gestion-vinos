@@ -1,47 +1,69 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import NavbarLogIn from "../../components/NavbarLogIn";
+import "./login.css";
 
 export default function LoginForm() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Inicio de sesión:", { email, password });
-		// Aquí podrías llamar a tu API de autenticación
-	};
+	const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await fetch("http://localhost:3500/api/usuarios/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                contraseña: password
+            }),
+        })
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status} ${response.statusText}`);
+        }
+        
+        const result = await response.json()
+        localStorage.setItem("token", result.token)
+        localStorage.setItem("role", result.role)
+        localStorage.setItem("email", result.email)
+
+        navigate("/pedidos")
+    };
 
 	return (
-		<div className="h-screen w-screen flex items-center justify-center bg-white">
+        <>
+        <NavbarLogIn />
+		<div className="login-page">
 			<form
 				onSubmit={handleSubmit}
-				className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm"
+				className="login-form"
 			>
-				<h2 className="text-2xl font-semibold mb-6 text-center">
+				<h2 className="login-title">
 					Iniciar sesión
 				</h2>
 
-				<div className="mb-4">
-					<label className="block text-gray-700 mb-1" htmlFor="email">
-						Correo electrónico
-					</label>
+				<div className="login-email">
+					
 					<input
 						id="email"
 						type="email"
-						className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Correo electrónico"
+						className="login-input"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						required
 					/>
 				</div>
 
-				<div className="mb-6">
-					<label className="block text-gray-700 mb-1" htmlFor="password">
-						Contraseña
-					</label>
+				<div className="login-password">
 					<input
 						id="password"
 						type="password"
-						className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Contraseña"
+						className="login-input"
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						required
@@ -50,12 +72,13 @@ export default function LoginForm() {
 
 				<button
 					type="submit"
-					className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+					className="login-submit"
 				>
 					Iniciar sesión
 				</button>
 			</form>
 		</div>
+        </>
 	);
 }
 

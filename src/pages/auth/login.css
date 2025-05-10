@@ -1,0 +1,42 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+.login-form {
+    width: 30vw;
+    height: 50vh;
+    background: #688098;
+    border-radius: 0.6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4vh;
+}
+
+.login-title {
+    color: #fff;
+}
+
+.login-input {
+    max-width: 18vw;
+    min-width: 18vw;
+    height: 4vh;
+    padding: 0.5vh 1vw;
+    border: 2px solid #2E3944;
+    border-radius: 0.6vw;
+}
+
+.login-submit {
+    max-width: 20vw;
+    min-width: 20vw;
+    height: 4vh;
+    padding: 0 1vh;
+    border-radius: 1vw;
+    border: None;
+}
