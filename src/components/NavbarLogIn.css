@@ -5,10 +5,13 @@
     width: 100vw;
     height: 10vh;
     border-bottom: 2px solid #2E3944;
+    z-index: 2;
+    background: #212A31;
 }
 
 .login-navbar-logo {
     margin-left: 5vw;
     color: #688098;
     font-size: 3vh;
+    z-index: 2;
 }

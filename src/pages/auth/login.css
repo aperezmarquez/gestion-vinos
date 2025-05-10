@@ -4,12 +4,23 @@
     align-items: center;
     width: 100vw;
     height: 90vh;
+    background-image: url("../../../public/vinoteca.jpeg");
+    background-size: cover;
+}
+
+.login-page:before {
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 90vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
 }
 
 .login-form {
     width: 30vw;
     height: 50vh;
-    background: #688098;
+    background: #3d556d;
     border-radius: 0.6vw;
     display: flex;
     flex-direction: column;
@@ -17,6 +28,7 @@
     align-items: center;
     text-align: center;
     gap: 4vh;
+    z-index: 2;
 }
 
 .login-title {
@@ -28,8 +40,10 @@
     min-width: 18vw;
     height: 4vh;
     padding: 0.5vh 1vw;
-    border: 2px solid #2E3944;
+    border: 2px solid #accbe9;
     border-radius: 0.6vw;
+    background: #4c657e;
+    color: #fff;
 }
 
 .login-submit {
@@ -39,4 +53,6 @@
     padding: 0 1vh;
     border-radius: 1vw;
     border: None;
+    background: #902929;
+    color: white;
 }

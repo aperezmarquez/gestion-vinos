@@ -42,7 +42,7 @@ export default function LoginForm() {
 				className="login-form"
 			>
 				<h2 className="login-title">
-					Iniciar sesión
+					Iniciar Sesión
 				</h2>
 
 				<div className="login-email">
