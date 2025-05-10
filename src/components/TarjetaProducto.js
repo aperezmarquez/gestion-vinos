@@ -1,9 +1,26 @@
+import React from "react"
+import { useRef } from "react"
+import EditProductPopUp from "./EditProductPopUp"
 import './TarjetaProducto.css'
 
-const tarjetaProducto = ({ cosecha, precio_euros, descripcion, cantidad }) => {
+const TarjetaProducto = ({ key, cosecha, precio_euros, descripcion, cantidad }) => {
+    const editRef = useRef(null)
+
+    const handleClick = () => {
+        editRef.current.showModal()
+    }
+
     return (
         <>
-            <div className="card">
+            <EditProductPopUp 
+                ref={editRef}
+                key={key}
+                cosecha={cosecha}
+                precio_euros={precio_euros}
+                descripcion={descripcion}
+                cantidad={cantidad}
+            />
+            <div className="card" onClick={handleClick}>
                 <div className="card-cosecha">{cosecha}</div>
                 <div className="card-descripcion">{descripcion}</div>
                 <hr className="card-divider" />
@@ -16,4 +33,4 @@ const tarjetaProducto = ({ cosecha, precio_euros, descripcion, cantidad }) => {
     )
 }
 
-export default tarjetaProducto;
+export default TarjetaProducto;

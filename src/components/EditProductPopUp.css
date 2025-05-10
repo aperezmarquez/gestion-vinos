@@ -1,0 +1,54 @@
+.edit-product-popup {
+    width: 30vw;
+    height: 40vh;
+    padding: 2vh 3vw;
+    border-radius: 0.6vw;
+    border: None;
+}
+
+.edit-product-popup-close {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+    
+    p {
+        cursor: pointer;
+    }
+}
+
+.edit-product-popup-content {
+    width:30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2vh 0 2vh 0;
+
+    h1 {
+        font-family: Open Sans;
+        font-size: 2vw;
+        margin: 0;
+    }
+}
+
+.edit-product-popup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30vw;
+    gap: 2vh;
+
+    .quantity {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .price {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
