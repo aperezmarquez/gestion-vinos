@@ -1,0 +1,47 @@
+.card-link {
+    width: 35vw;
+    height: 45.5vh;
+    margin-right: 1.5vw;
+    flex-shrink: 0;
+    border-radius: 0.6vw;
+    border: 2px solid #4c657e;
+    background: #557faa;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+}
+
+.card-link:hover {
+    cursor: pointer;
+}
+
+.card-link-img {
+    width: 35vw;
+    height: 37.5vh;
+    flex-shrink: 0;
+    border-radius: 0.4vw 0.4vw 0 0;
+    border-bottom: 2px solid #4c657e;
+    object-fit: cover;
+}
+
+.card-link-title {
+    display: flex;
+    width: 20vw;
+    height: 7.5vh;
+    margin-left: 1.5vw;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.card-link-name {
+    color: #fff;
+    font-family: Open Sans;
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 4vh;
+    letter-spacing: 0.0125rem;
+}

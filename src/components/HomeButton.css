@@ -1,0 +1,26 @@
+.home-top-button {
+    display: flex;
+    width: 18vw;
+    padding: 1.5vh 1vw;
+    align-items: center;
+    gap: 0.5vh;
+    margin-top: 1.5vh;
+    align-self: stretch;
+    border-radius: 0.6vw;
+
+    font-family: Open Sans;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3vh;
+    color: #fff;
+
+    background: #557faa;
+    border: 2px solid #4c657e;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0.12rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+}

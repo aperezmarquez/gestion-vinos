@@ -1,10 +1,18 @@
 import Navbar from "../../components/Navbar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CardLink from "../../components/CardLink";
+import HomeButton from "../../components/HomeButton";
 import './home.css';
 
 const Home = () => {
+    const [role, setRole] = useState();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const role = localStorage.getItem('role');
+        setRole(role)
+    }, [])
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -24,10 +32,6 @@ const Home = () => {
                 localStorage.clear()
             }
             const result = await response.json()
-            
-            if (result === true) {
-                setIsLogInOpen(false)
-            }
         }
 
         if (token) {
@@ -38,7 +42,22 @@ const Home = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div>Home</div> 
+            <div className="home-container">
+                <section className="home-top-section">
+                    <CardLink name="Productos" url="/productos" img_url="/vinoteca.jpeg" />
+                    <CardLink name="Pedidos" url="/pedidos" img_url="/pedido.jpg" />
+                    <div className="home-buttons">
+                        <p className="home-buttons-title">Otros</p>
+                        <HomeButton name="Clientes" url="/clientes" />
+                        {role === 'admin' && (
+                            <HomeButton name="Empleados" url="/empleados" />   
+                        )}
+                    </div>
+                </section>
+                <section className="home-bottom-section">
+                
+                </section>
+            </div> 
         </>
     );
 };
