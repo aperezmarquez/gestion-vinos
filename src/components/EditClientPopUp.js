@@ -29,6 +29,7 @@ const EditClientPopUp = ({ cliente, isOpen, setIsOpen, ref}) => {
         const response = updateCliente(cliente.id, updatedClient)
 
         ref.current.close()
+        setIsOpen(false)
         window.location.reload()
     } 
 

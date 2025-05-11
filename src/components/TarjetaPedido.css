@@ -1,0 +1,8 @@
+.card-pedido {
+    width: 12vw;
+    height: 19vh;
+    padding: 2vh 2vw;
+    border-radius: 1vw;
+    background: #fff;
+    cursor: pointer;
+}

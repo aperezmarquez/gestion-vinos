@@ -1,8 +1,8 @@
-const postCliente = async(cliente) => {
+const postPedido = async(pedido) => {
     try {
-        const response = await fetch('http://localhost:3500/api/clientes', {
+        const response = await fetch('http://localhost:3500/api/pedidos', {
             method: 'POST',
-            body: JSON.stringify(cliente),
+            body: JSON.stringify(pedido),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -18,4 +18,4 @@ const postCliente = async(cliente) => {
     } 
 }
 
-export default postCliente
+export default postPedido
