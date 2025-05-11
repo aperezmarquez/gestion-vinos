@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import updateProducto from "../hooks/updateProducto"
 import "./EditProductPopUp.css"
 
 const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares, descripcion, cantidad }) => {
@@ -10,8 +11,9 @@ const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares
         ref.current.close()
     }
 
-    const handleSubmit = () => {
-        console.log("Cambios guardados")    
+    const handleSubmit = async () => {
+        const response = await updateProducto(id, {cantidad: cantidad_producto, precio_euros: precio, precio_dolares: precio_dolar})
+        console.log(response)
     }
 
     return (
@@ -28,15 +30,15 @@ const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares
                 <form className="edit-product-popup-form">
                     <div className="edit-product-popup-form quantity">
                         <label>Numero de botellas disponibles: </label>
-                        <input type="text" value={cantidad_producto} onChange={e => setCantidad(e.target.value)} />
+                        <input type="number" value={cantidad_producto} onChange={e => setCantidad(e.target.value)} />
                     </div>
                     <div className="edit-product-popup-form price">
                         <label>Precio por botella: </label>
-                        <input type="text" value={precio} onChange={e => setPrecio(e.target.value)} />
+                        <input type="number" value={precio} onChange={e => setPrecio(e.target.value)} />
                     </div>
                     <div className="edit-product-popup-form price">
                         <label>Precio por botella en dolares: </label>
-                        <input type="text" value={precio_dolar} onChange={e => setPrecioDolar(e.target.value)} />
+                        <input type="number" value={precio_dolar} onChange={e => setPrecioDolar(e.target.value)} />
                     </div>
                     <button className="edit-product-popup-form-button" type="submit" onClick={handleSubmit}>Guardar cambios</button>
                 </form>

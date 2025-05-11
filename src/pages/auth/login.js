@@ -30,7 +30,7 @@ export default function LoginForm() {
         localStorage.setItem("role", result.role)
         localStorage.setItem("email", result.email)
 
-        navigate("/pedidos")
+        navigate("/home")
     };
 
 	return (
