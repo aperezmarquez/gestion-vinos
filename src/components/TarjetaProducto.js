@@ -3,7 +3,7 @@ import { useRef } from "react"
 import EditProductPopUp from "./EditProductPopUp"
 import './TarjetaProducto.css'
 
-const TarjetaProducto = ({ key, tipo, cosecha, precio_euros, precio_dolares, descripcion, cantidad }) => {
+const TarjetaProducto = ({ id, tipo, cosecha, precio_euros, precio_dolares, descripcion, cantidad }) => {
     const editRef = useRef(null)
 
     const handleClick = () => {
@@ -14,7 +14,7 @@ const TarjetaProducto = ({ key, tipo, cosecha, precio_euros, precio_dolares, des
         <>
             <EditProductPopUp 
                 ref={editRef}
-                key={key}
+                id={id}
                 tipo={tipo}
                 cosecha={cosecha}
                 precio_euros={precio_euros}

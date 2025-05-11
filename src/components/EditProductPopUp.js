@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./EditProductPopUp.css"
 
-const EditProductPopUp = ({ ref, key, tipo, cosecha, precio_euros, precio_dolares, descripcion, cantidad }) => {
+const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares, descripcion, cantidad }) => {
     const [precio, setPrecio] = useState(precio_euros)
     const [precio_dolar, setPrecioDolar] = useState(precio_dolares)
     const [cantidad_producto, setCantidad] = useState(cantidad)
