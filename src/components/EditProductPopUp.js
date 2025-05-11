@@ -11,9 +11,11 @@ const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares
         ref.current.close()
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         const response = await updateProducto(id, {cantidad: cantidad_producto, precio_euros: precio, precio_dolares: precio_dolar})
-        console.log(response)
+        ref.current.close()
+        window.location.reload()
     }
 
     return (
@@ -40,7 +42,7 @@ const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares
                         <label>Precio por botella en dolares: </label>
                         <input type="number" value={precio_dolar} onChange={e => setPrecioDolar(e.target.value)} />
                     </div>
-                    <button className="edit-product-popup-form-button" type="submit" onClick={handleSubmit}>Guardar cambios</button>
+                    <button className="edit-product-popup-form-button" onClick={handleSubmit}>Guardar cambios</button>
                 </form>
             </dialog>
         </>

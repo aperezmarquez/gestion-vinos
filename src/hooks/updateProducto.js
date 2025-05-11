@@ -1,8 +1,9 @@
 const updateProducto = async (id, cambios) => {
-    const response = await fetch(`http://localhost:3500/productos/update/${id}`, {
-        METHOD: 'PATCH',
-        BODY: JSON.stringify(cambios),
-        HEADERS: {
+    console.log(id, cambios)
+    const response = await fetch(`http://localhost:3500/api/productos/update/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(cambios),
+        headers: {
             'Content-Type': 'application/json'
         }
     })
