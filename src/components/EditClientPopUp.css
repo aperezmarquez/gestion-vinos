@@ -1,0 +1,38 @@
+.edit-client-popup {
+    width: 30vw;
+    height: 48vh;
+    padding: 5vh 3vw;
+    display: flex;
+    flex-direction: column;
+    border: None;
+    border-radius: 1vw;
+
+    h1 {
+        margin: 0 0 3vh 0;
+    }
+}
+
+.edit-client-popup-close {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+    p {
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+.edit-client-form {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+
+    button {
+        width: 30vw;
+        height: 4vh;
+        margin-top: 2vh;
+        border: None;
+        border-radius: 1vw;
+    }
+}

@@ -1,8 +1,8 @@
 const getProductos = async() => {
     try {
         const response = await fetch('http://localhost:3500/api/productos', {
-            METHOD: 'GET',
-            HEADERS: {
+            method: 'GET',
+            headers: {
                 'Content-Type': 'application/json'
             }
         })
