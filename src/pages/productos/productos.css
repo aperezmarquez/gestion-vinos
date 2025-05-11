@@ -2,17 +2,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Rejilla adaptable */
   gap: 4vw; /* Espaciado entre los elementos */
-  padding: 1vh 2vw;
+  padding: 2vh 3vw;
 }
 
 .productos-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2vw;
+    padding: 0 3vw;
     font-family: Open Sans;
 
     p {
+        margin: 4.2vh 0 0 0;
         font-family: Open Sans;
         font-size: 1.6vw;
         font-style: normal;
@@ -24,6 +25,7 @@
 
 .productos-button {
     padding: 1vh 1vw;
+    margin: 4.2vh 0 0 0;
     border-radius: 0.6vw;
     border: None;
     background: #4c657e;
