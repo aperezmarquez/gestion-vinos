@@ -13,7 +13,7 @@ const EditProductPopUp = ({ ref, id, tipo, cosecha, precio_euros, precio_dolares
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const response = await updateProducto(id, {cantidad: cantidad_producto, precio_euros: precio, precio_dolares: precio_dolar})
+        await updateProducto(id, {cantidad: cantidad_producto, precio_euros: precio, precio_dolares: precio_dolar})
         ref.current.close()
         window.location.reload()
     }

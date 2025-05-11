@@ -22,7 +22,7 @@ const EditEmpleadoPopUp = ({ empleado, isOpen, setIsOpen, ref}) => {
         setIsOpen(false)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const updatedEmpleado = {
             seguridad_social,
@@ -40,11 +40,11 @@ const EditEmpleadoPopUp = ({ empleado, isOpen, setIsOpen, ref}) => {
             estado
         }
 
-        const response = updateEmpleado(empleado.id, updatedEmpleado)
+        await updateEmpleado(empleado.id, updatedEmpleado)
 
         ref.current.close()
         setIsOpen(false)
-        //window.location.reload()
+        window.location.reload()
     } 
 
     return (

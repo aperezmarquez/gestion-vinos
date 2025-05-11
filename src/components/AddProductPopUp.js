@@ -17,7 +17,7 @@ const AddProductPopUp = ({ ref }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        postProducto({
+        await postProducto({
             descripcion: descripcion,
             precio_euros: +precio_euros,
             precio_dolares: +precio_dolares,
@@ -25,6 +25,9 @@ const AddProductPopUp = ({ ref }) => {
             cosecha: cosecha,
             cantidad: +cantidad
         })
+
+        handleClose()
+        window.location.reload()
     }
 
     return (

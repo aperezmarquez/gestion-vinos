@@ -14,9 +14,9 @@ const AddClientPopUp = ({ ref }) => {
         ref.current.close()
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        postCliente({
+        await postCliente({
             nombre,
             apellidos,
             NIF: nif,

@@ -12,10 +12,10 @@ const AddPedidoPopUp = ({ ref }) => {
         ref.current.close()
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const total = precio * cantidad
-        postPedido({
+        await postPedido({
             id_cliente: +id_cliente,
             id_empresa: null,
             cantidad: +cantidad,

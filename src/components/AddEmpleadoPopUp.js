@@ -21,9 +21,9 @@ const AddEmpleadoPopUp = ({ ref }) => {
         ref.current.close()
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        postCliente({
+        await postCliente({
             seguridad_social,
             IBAN: iban,
             NIF: nif,

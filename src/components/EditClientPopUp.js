@@ -15,7 +15,7 @@ const EditClientPopUp = ({ cliente, isOpen, setIsOpen, ref}) => {
         setIsOpen(false)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const updatedClient = {
             nombre,
@@ -26,7 +26,7 @@ const EditClientPopUp = ({ cliente, isOpen, setIsOpen, ref}) => {
             cumpleaños
         }
 
-        const response = updateCliente(cliente.id, updatedClient)
+        await updateCliente(cliente.id, updatedClient)
 
         ref.current.close()
         setIsOpen(false)

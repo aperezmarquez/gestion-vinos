@@ -35,7 +35,10 @@ const Productos = () => {
                 <button className="productos-button" onClick={handleClick}>Añadir Producto</button>
             </div>
             <div className="grid-container">
-                {productos.map((producto) => (
+                {!productos && (
+                    <p>No hay productos disponibles</p>
+                )}
+                {productos && productos.map((producto) => (
                     <TarjetaProducto key={producto.id} {...producto} id={producto.id} />
                 ))}
             </div>

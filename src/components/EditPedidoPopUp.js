@@ -12,7 +12,7 @@ const EditPedidoPopUp = ({ pedido, isOpen, setIsOpen, ref}) => {
         setIsOpen(false)
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const total = cantidad * precio
 
@@ -24,7 +24,7 @@ const EditPedidoPopUp = ({ pedido, isOpen, setIsOpen, ref}) => {
             total: +total
         }
 
-        const response = updatePedido(pedido.id, updatedPedido)
+        await updatePedido(pedido.id, updatedPedido)
 
         ref.current.close()
         setIsOpen(false)
