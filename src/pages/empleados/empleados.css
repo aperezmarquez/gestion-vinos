@@ -1,0 +1,31 @@
+.empleados {
+    padding: 2vh 3vw;
+}
+
+.empleados-top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        font-family: Open Sans;
+        font-size: 1.6vw;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 3vh;
+        color: #688098; 
+    }
+
+    button {
+        padding: 1vh 1vw;
+        border-radius: 0.6vw;
+        border: None;
+        background: #4c657e;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            background: #557faa;
+        }
+    }
+}

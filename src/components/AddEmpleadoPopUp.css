@@ -1,0 +1,45 @@
+.add-empleado-popup {
+    width: 30vw;
+    height: 83vh;
+    padding: 3vh 2vw;
+    border-radius: 1vw;
+    border: None;
+
+    h1 {
+        margin: 0 0 2vh 0; 
+    }
+}
+
+.add-empleado-close {
+    width: 30vw;
+    display: flex;
+    justify-content: flex-end;
+
+    p {
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+.add-empleado-form {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+
+    input {
+        width: 30vw;
+        height: 3vh;
+    }
+
+    button {
+        width: 30vw;
+        height: 3vh;
+        margin-top: 2vh;
+        cursor: pointer;
+        border-radius: 1vw;
+        border: None;
+    }
+}

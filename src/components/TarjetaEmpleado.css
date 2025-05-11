@@ -1,0 +1,8 @@
+.card-empleado {
+    width: 12vw;
+    height: 18vh;
+    padding: 2vh 2vw;
+    border-radius: 1vw;
+    background: #fff;
+    cursor: pointer;
+}
